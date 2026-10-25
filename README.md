@@ -345,6 +345,3 @@ The optional browser acceptance script requires a local Chromium/Edge installati
 - Utilization is normalized capacity, not application latency, queueing, or service-level behavior.
 - Smoke mode uses one replication and is pipeline verification only. Run the research profile and independently review the methodology before drawing substantive conclusions.
 
-## License
-
-Copyright © 2026 Yatharth Garg. ThermoTwin is available under the [MIT License](LICENSE). Third-party dependencies retain their own licenses.
