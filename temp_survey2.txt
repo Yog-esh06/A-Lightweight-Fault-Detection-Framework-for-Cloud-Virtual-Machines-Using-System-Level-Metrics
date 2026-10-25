@@ -1,0 +1,197 @@
+21CSC305P Machine learning
+Submitted by
+Yogesh R Metha
+[RA2411003010776]
+Bhavy [RA2411003010749] 
+Darsh M Saraf [RA2411003010731]
+Bhavish [RA2411003010766]
+Under the Guidance of
+Dr.V.Angayarkanni
+1852613
+19050
+Student Academic Performance Prediction 
+LITERATURE SURVEY
+1. COMPARISON TABLE ANALYSIS
+ 
+S.No.
+Paper Title
+Authors / Year
+Approach / Technology
+Project Relevance
+Key Limitation
+1
+XGBoost To Enhance Learner Performance Prediction
+S. Hakkal, A. Ait Lahcen (2024)
+XGBoost and comparison with other learner-performance prediction approaches
+Supports the use of XGBoost for student/learner performance prediction and model comparison.
+Focuses on learner interaction data rather than a general student-factor dataset.
+2
+Student Performance Prediction Using Machine Learning Algorithms
+Esmael Ahmed (2024)
+SVM, Random Forest and other ML algorithms for student performance prediction
+Directly relevant to comparing ML algorithms for academic-performance prediction.
+Dataset/context differs from the Student Performance Factors dataset.
+3
+Predicting Performance of Students by Optimizing Tree Components of Random Forest Using Genetic Algorithm
+M. Chen et al. (2024)
+Random Forest, Genetic Algorithm, feature selection
+Relevant to tree-based models and feature-selection techniques for student performance.
+Primarily focuses on classification rather than continuous Exam_Score prediction.
+4
+Academic Achievement Prediction in Higher Education Through Interpretable Modeling
+S. Wang, B. Luo (2024)
+Interpretable machine learning
+Supports the use of interpretable ML when predicting academic achievement.
+Uses a specific higher-education dataset, limiting direct generalization.
+5
+Development of an Early Warning System for Higher Education Institutions by Predicting First-Year Student Academic Performance
+C. R. Çırak, H. Akıllı, Y. Ekinci (2024)
+ML-based early-warning prediction
+Strongly relevant to your proposed at-risk student detection and early-intervention component.
+Focuses on early-warning classification rather than continuous score prediction.
+6
+Machine Learning Approach to Student Performance Prediction of Online Learning
+Jing Wang, Yun Yu (2025)
+Eleven learning-behavior indicators + correlation-based feature selection + logistic regression
+Supports using behavioral factors such as learning activity and duration as predictors of performance.
+Designed specifically for online-learning behavior.
+7
+What Factors Enhance Students’ Achievement? A Machine Learning and Interpretable Methods Approach
+Hui Mao, Ribesh Khanal, ChengZhang Qu, HuaFeng Kong, TingYao Jiang (2025)
+SVM, Decision Tree, ANN, Random Forest, XGBoost + interpretable analysis
+Very relevant to your multi-factor approach and the use of ML + interpretability to understand academic achievement.
+Uses behavioral/instructional predictors from its own educational setting.
+8
+Optimizing Multi Label Student Performance Prediction with GNN-TINet: A Contextual Multidimensional Deep Learning Framework
+Xiaoyi Zhang, Yakang Zhang, Angelina Lilac Chen, Manning Yu, Lihao Zhang (2025)
+Graph neural network, contextual feature encoding and multidimensional learning
+Demonstrates modern approaches for multi-factor student-performance prediction and early identification of at-risk students.
+More complex deep-learning architecture than required for your proposed system.
+9
+Data Driven Decisions in Education Using a Comprehensive Machine Learning Framework for Student Performance Prediction
+Muhammad Nadeem Gul, Waseem Abbasi, Muhammad Zeeshan Babar, Abeer Aljohani, …, Muhammad Arif (2025)
+Decision Tree, Random Forest, Lasso, KNN, XGBoost, CatBoost, AdaBoost and Gradient Boosting
+Very relevant to your comparative-model approach and evaluation using MAE, MSE and RMSE.
+Uses demographic and academic features from a different dataset.
+10
+A Multiobjective, Stable, and Fair Feature Selection and Ensemble Learning Framework for Explainable Student Academic Performance Prediction
+M. A. Elsabagh, Menna M. S. Elmasry, Mona G. Gafar et al. (2026)
+Feature selection, ensemble learning, explainability and fairness
+Directly supports your proposed combination of feature importance + explainability + ensemble ML.
+Framework is more sophisticated than the proposed undergraduate implementation.
+2. RESEARCH GAPS 
+2.1 Need for Multi-Factor Continuous Prediction
+A large body of student-performance research treats the task as classification, such as pass/fail or at-risk prediction. However, your dataset provides a continuous 
+Exam_Score
+, making regression a natural primary task. Existing literature demonstrates both classification and regression, but classification remains common.
+2.2 Need for Explainable Predictions
+High prediction accuracy alone does not tell a student or administrator why a prediction was produced. Recent research increasingly uses SHAP and related XAI methods to identify the contribution of individual features and improve trust in educational models.
+2.3 Limited Translation from Prediction to Action
+Many studies stop after predicting performance or risk. Recent work is beginning to connect prediction with support systems, recommendations and early intervention. This creates an opportunity for our system to move from “predicting a score” toward “using the prediction to suggest areas for improvement.”
+2.4 Need for Evaluation Across Multiple Models
+Different student datasets behave differently, so selecting one algorithm without comparison can be misleading. Research therefore supports comparing several regression approaches rather than assuming one model is universally best.
+2.5 Dataset-Specific Interpretability
+Even when SHAP is used, feature importance can vary depending on the dataset and educational setting. Therefore, our system should derive explanations specifically from the Student Performance Factors dataset, rather than importing conclusions from another dataset. Recent research shows why model explanations should be examined in the context of the actual educational data.
+2.6 From Analysis to an Early-Intervention System
+The literature increasingly identifies the value of early identification of students needing support. Our dataset provides factors such as attendance, study time, previous scores, tutoring, motivation and access to resources that can support a risk-scoring and recommendation layer after the primary regression task.
+3. PROBLEM STATEMENT 
+Existing student-performance systems demonstrate that Machine Learning can predict academic outcomes, but many approaches focus either on classification, specialized learning-platform activity, or prediction without actionable explanations. Our project aims to develop a multi-factor system using the Student Performance Factors dataset that predicts continuous examination scores, identifies students who may require attention, explains predictions through feature importance and SHAP, and converts the identified weaknesses into practical improvement recommendations. 
+4. PROPOSED SOLUTION 
+4.1 Final Marks Prediction
+Develop a regression-based Machine Learning model to predict the student’s 
+Exam_Score
+ using academic, behavioral, and contextual factors available in the dataset.
+4.2 Comparative Model Development
+Train and compare multiple regression models:
+Linear Regression
+Decision Tree Regressor
+Random Forest Regressor
+Gradient Boosting Regressor
+XGBoost Regressor
+The models will be evaluated using MAE, MSE, RMSE, and R², with 5-Fold Cross Validation used for reliable model comparison.
+4.3 At-Risk Student Detection
+Use the predicted examination score to classify students into performance/risk categories using predefined score thresholds. This converts the regression output into an early-warning indicator for students who may require academic support.
+4.4 Explainable AI
+SHAP to explain individual predictions and identify how factors such as attendance, study hours, previous scores, tutoring, and other available features contribute to the predicted score.
+Random Forest/XGBoost feature importance will provide global insights into the most influential factors.
+4.5 Personalized Recommendations
+Generate rule-based recommendations from the student's influential factors and predicted performance. For example, students showing low attendance or study hours can receive targeted suggestions for improvement.
+4.6 Analytics Dashboard
+Develop an interactive interface to display:
+Predicted Exam Score
+Risk Category
+Key Influencing Factors
+SHAP Explanation
+Feature Importance
+Performance Visualizations
+Personalized Recommendations
+5. OBJECTIVES
+5.1 Exam Score Prediction
+To develop regression models capable of predicting continuous student examination scores from academic, behavioral and contextual factors.
+5.2 Comparative Model Evaluation
+To compare multiple regression algorithms and identify the most suitable model using MAE, MSE, RMSE and R².
+5.3 Risk Identification
+To derive an interpretable risk category from predicted performance and identify students who may require additional academic support.
+5.4 Explainable AI
+To use SHAP and feature-importance analysis to explain both global model behavior and individual predictions.
+5.5 Personalized Recommendations
+To generate practical recommendations based on influential student factors identified through analysis and model explanations.
+5.6 Analytics Platform
+To present predictions, risk indicators, influential factors and recommendations through an interactive analytics interface.
+6. PROPOSED ARCHITECTURE  
+Student Performance Dataset
+ ↓
+ Data Cleaning & Missing-Value Handling
+ ↓
+ Encoding & Feature Processing
+ ↓
+ EDA + Statistical Analysis
+ ↓
+ Train/Test Split + 5-Fold Cross-Validation
+ ↓
+ Regression Models
+ ↓
+ Best Model Selection
+ ↓
+ SHAP + Feature Importance
+ ↓
+ Score Prediction + Risk Classification
+ ↓
+ Recommendations & Dashboard
+7. REFERENCES 
+[1] S. Hakkal and A. Ait Lahcen, “XGBoost to enhance learner performance prediction,” 
+Computers and Education: Artificial Intelligence
+, vol. 7, Art. no. 100254, 2024, doi: 10.1016/j.caeai.2024.100254.
+[2] E. Ahmed, “Student performance prediction using machine learning algorithms,” 
+Applied Computational Intelligence and Soft Computing
+, 2024, Art. no. 4067721, doi: 10.1155/2024/4067721.
+[3] M. Chen 
+et al.
+, “Predicting performance of students by optimizing tree components of random forest using genetic algorithm,” 
+Heliyon
+, 2024.
+[4] S. Wang and B. Luo, “Academic achievement prediction in higher education through interpretable modeling,” 
+PLOS ONE
+, vol. 19, 2024.
+[5] C. R. Çırak, H. Akıllı, and Y. Ekinci, “Development of an early warning system for higher education institutions by predicting first-year student academic performance,” 
+Higher Education Quarterly
+, 2024.
+[6] J. Wang and Y. Yu, “Machine learning approach to student performance prediction of online learning,” 
+PLOS ONE
+, vol. 20, no. 1, Art. no. e0299018, 2025, doi: 10.1371/journal.pone.0299018.
+[7] H. Mao, R. Khanal, C. Qu, H. Kong, and T. Jiang, “What factors enhance students’ achievement? A machine learning and interpretable methods approach,” 
+PLOS ONE
+, vol. 20, no. 5, Art. no. e0323345, 2025, doi: 10.1371/journal.pone.0323345.
+[8] X. Zhang, Y. Zhang, A. L. Chen, M. Yu, and L. Zhang, “Optimizing multi label student performance prediction with GNN-TINet: A contextual multidimensional deep learning framework,” 
+PLOS ONE
+, vol. 20, 2025, Art. no. e0314823, doi: 10.1371/journal.pone.0314823.
+[9] M. N. Gul, W. Abbasi, M. Z. Babar, A. Aljohani, 
+et al.
+, “Data driven decisions in education using a comprehensive machine learning framework for student performance prediction,” 
+Discover Computing
+, vol. 28, Art. no. 153, 2025, doi: 10.1007/s10791-025-09585-3.
+[10] M. A. Elsabagh, M. M. S. Elmasry, M. G. Gafar, 
+et al.
+, “A multiobjective, stable, and fair feature selection and ensemble learning framework for explainable student academic performance prediction,” 
+Complexity
+, 2026, Art. no. 6614441.

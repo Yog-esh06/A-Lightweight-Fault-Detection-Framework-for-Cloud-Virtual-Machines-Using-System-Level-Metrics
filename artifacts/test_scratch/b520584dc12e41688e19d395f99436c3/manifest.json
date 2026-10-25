@@ -1,0 +1,36 @@
+{
+  "schema": "1.0",
+  "feature_names": [
+    "temp_now",
+    "temp_lag1",
+    "temp_lag3",
+    "temp_lag6",
+    "temp_lag_window",
+    "util_now",
+    "util_lag1",
+    "util_mean",
+    "supply_c",
+    "airflow",
+    "ambient_c",
+    "rack_fraction",
+    "zone_fraction",
+    "time_sin",
+    "time_cos"
+  ],
+  "sequence_feature_names": [
+    "temperature_c",
+    "utilization",
+    "supply_c",
+    "airflow",
+    "ambient_c",
+    "rack_fraction",
+    "zone_fraction"
+  ],
+  "horizons_min": [
+    5,
+    10,
+    15,
+    30,
+    60
+  ]
+}

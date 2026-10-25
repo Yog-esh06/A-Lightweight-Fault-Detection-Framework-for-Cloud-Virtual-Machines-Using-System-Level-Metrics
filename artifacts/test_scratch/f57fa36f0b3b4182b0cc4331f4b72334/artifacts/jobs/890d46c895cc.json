@@ -1,0 +1,17 @@
+{
+  "job_id": "890d46c895cc",
+  "profile": "smoke",
+  "status": "cancelling",
+  "progress": 11,
+  "progress_events": 5,
+  "logs": [
+    "step 0",
+    "step 1",
+    "step 2",
+    "step 3",
+    "step 4"
+  ],
+  "run_id": null,
+  "error": null,
+  "created_utc": "2026-09-13T11:04:26.544103+00:00"
+}
